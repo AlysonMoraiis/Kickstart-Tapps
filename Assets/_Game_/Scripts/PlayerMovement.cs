@@ -11,24 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private Transform movePoint;
     [SerializeField]
     private LayerMask colliders;
-    public float runSpeed = 20.0f;
-    Rigidbody2D body;
-    public Vector2 velocity;
-
 
 
     void Start()
     {
         movePoint.parent = null;
-        body = GetComponent<Rigidbody2D>();
-
     }
 
-
-    void FixedUpdate()
-    {
-        body.velocity = velocity;
-    }
 
     void Update()
     {
@@ -37,8 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementManager()
     {
-        MovementKeys();
-        if (!IsMouseOverUi()) MovementTouch();
+        MovementKeys(); //Chama as funções do teclado criado pelo Alyson
+        
+        //Retorna true or false se foi clicado em cima da UI, caso seja falso ele chama MovementTouch()
+        if (!IsMouseOverUi()) MovementTouch(); 
+        //Se a posição do player for igual a desejada, ele não executa nada abaixo desse if
+        if (transform.position == movePoint.position) return;
+        //Faz a movimentação para posição desejada
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
 
@@ -46,29 +40,46 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementTouch()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
+        //Caso não seja o "botão esquerdo do mouse", ele não executa nada abaixo do if
+        if (!Input.GetMouseButtonDown(0)) return;        
+        //Pega a posição do clice do mouse e define a posição desejada
             var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             worldPosition.z = 0f;
             movePoint.position = worldPosition;
-            Debug.Log(worldPosition);
-        }
+            Debug.Log(worldPosition);        
     }
 
     private bool IsMouseOverUi()
     {
+        //Verifica se clicou na UI
         return EventSystem.current.IsPointerOverGameObject();
     }
 
-    void MovementKeys()
+    private void OnCollisionEnter2D(Collision2D other)
+    {       
+        //Se a tag do objeto for diferente de Wall, ele não executa nada abaixo
+        if (!other.gameObject.CompareTag("Wall")) return;
+        Debug.Log("Colidiu!"); 
+        movePoint.position = transform.position;
+
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (!other.gameObject.CompareTag("Wall")) return;
+        Debug.Log("Colidiu!");
+        movePoint.position = transform.position;
+    }
+
+    /*void MovementKeys()
     {
         var horizontal = Input.GetAxisRaw("Horizontal") * moveSpeed;
         var vertical = Input.GetAxisRaw("Vertical");
         velocity = new Vector2(horizontal, vertical);
-    }
+    }*/
 
 
-    /*void MovementKeys()
+    void MovementKeys()
     {
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -89,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-    }*/
+    }
 
 }
 
