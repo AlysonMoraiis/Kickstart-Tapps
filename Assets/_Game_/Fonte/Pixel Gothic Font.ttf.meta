@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: b284a6525342f44599e9ce79e37c2d61
+guid: fe6c726625928b545b670cc58efa8341
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 60
+  fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Press Start 2P
+  - Pixel Gothic Font
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
