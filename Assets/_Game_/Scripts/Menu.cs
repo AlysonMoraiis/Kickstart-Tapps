@@ -20,6 +20,14 @@ public class Menu : MonoBehaviour
     public void Credits()
     {
         panelCredits.SetActive(true);
+        panelSettings.SetActive(false);
+        panelMenu.SetActive(false);
+    }
+
+    public void Settings()
+    {
+        panelSettings.SetActive(true);
+        panelCredits.SetActive(false);
         panelMenu.SetActive(false);
     }
 
@@ -27,6 +35,7 @@ public class Menu : MonoBehaviour
     {
         panelCredits.SetActive(false);
         panelMenu.SetActive(true);
+        panelSettings.SetActive(false);
     }
 
 
