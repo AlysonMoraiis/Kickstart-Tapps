@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
             var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             worldPosition.z = 0f;
             movePoint.position = worldPosition;
-            Debug.Log(worldPosition);        
     }
 
     private bool IsMouseOverUi()

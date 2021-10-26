@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST };
 public class BattleSystem : MonoBehaviour
@@ -21,6 +22,8 @@ public class BattleSystem : MonoBehaviour
     public Text battleResultText;
 
     public Button quitButton;
+
+    public event Action<int> OnWinning;
 
 
     public BattleState state;
@@ -101,16 +104,16 @@ public class BattleSystem : MonoBehaviour
     void EndBattle()
     {
         Debug.Log("Acabou");
-        if(state == BattleState.WON)
+        quitButton.gameObject.SetActive(true);
+        if (state == BattleState.WON)
         {
             battleResultText.text = "You win";
+            OnWinning?.Invoke(5);
         }
         else if (state == BattleState.LOST)
         {
             battleResultText.text = "You lose";
         }
-        quitButton.gameObject.SetActive(true);
-
     }
     public void OnAttackButton()
     {
