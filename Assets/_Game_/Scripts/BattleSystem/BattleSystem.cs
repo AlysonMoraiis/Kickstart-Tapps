@@ -12,7 +12,7 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
-    Unit playerUnit;
+    public Unit playerUnit;
     Unit enemyUnit;
 
     public BattleHud playerHUD;
@@ -39,7 +39,7 @@ public class BattleSystem : MonoBehaviour
         quitButton.gameObject.SetActive(false);
         battleResultText.text = "";
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<Unit>();
+        //playerUnit = playerGO.GetComponent<Unit>();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
@@ -52,7 +52,9 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
-
+    /// <summary>
+    /// //ultimo
+    /// </summary>
     private void PlayerTurn()
     {
 
