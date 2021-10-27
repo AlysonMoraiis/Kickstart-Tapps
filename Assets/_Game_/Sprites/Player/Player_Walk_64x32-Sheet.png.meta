@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: c3b1eefc910214546b68b5e61efcc4de
+guid: ebfbd92804dbe8a4e9935f84c387a1b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1238616115474187156
-    second: Player_Idle_64x32 teste-Sheet_0
+      213: 7057461440341633775
+    second: Player_Walk_64x32-Sheet_0
   - first:
-      213: 2111739128317779246
-    second: Player_Idle_64x32 teste-Sheet_1
+      213: -5467637900188323600
+    second: Player_Walk_64x32-Sheet_1
   - first:
-      213: 5751939801468885356
-    second: Player_Idle_64x32 teste-Sheet_2
+      213: -787107877673134613
+    second: Player_Walk_64x32-Sheet_2
   - first:
-      213: 914116184899767116
-    second: Player_Idle_64x32 teste-Sheet_3
+      213: 1995713890563556327
+    second: Player_Walk_64x32-Sheet_3
   - first:
-      213: 8860243278359563163
-    second: Player_Idle_64x32 teste-Sheet_4
+      213: 321926347571652361
+    second: Player_Walk_64x32-Sheet_4
+  - first:
+      213: 5158911054505736389
+    second: Player_Walk_64x32-Sheet_5
+  - first:
+      213: -1635160775051009743
+    second: Player_Walk_64x32-Sheet_6
+  - first:
+      213: -1744012833669330672
+    second: Player_Walk_64x32-Sheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_64x32 teste-Sheet_0
+      name: Player_Walk_64x32-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6c3618943d8fcee0800000000000000
-      internalID: -1238616115474187156
+      spriteID: fea6497b9c321f160800000000000000
+      internalID: 7057461440341633775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_64x32 teste-Sheet_1
+      name: Player_Walk_64x32-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -165,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2d9ca97c876e4d10800000000000000
-      internalID: 2111739128317779246
+      spriteID: 0f0ffce6c4c0f14b0800000000000000
+      internalID: -5467637900188323600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_64x32 teste-Sheet_2
+      name: Player_Walk_64x32-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -186,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c69dbfb36cef2df40800000000000000
-      internalID: 5751939801468885356
+      spriteID: be591673e81a315f0800000000000000
+      internalID: -787107877673134613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_64x32 teste-Sheet_3
+      name: Player_Walk_64x32-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -207,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4bc264b3d79fac00800000000000000
-      internalID: 914116184899767116
+      spriteID: 7e38a50b53332bb10800000000000000
+      internalID: 1995713890563556327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_64x32 teste-Sheet_4
+      name: Player_Walk_64x32-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -228,8 +237,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b0a2e6158e5fa70800000000000000
-      internalID: 8860243278359563163
+      spriteID: 907e8d6be46b77400800000000000000
+      internalID: 321926347571652361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_64x32-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c876af5542289740800000000000000
+      internalID: 5158911054505736389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_64x32-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131ae6440fdbe49e0800000000000000
+      internalID: -1635160775051009743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_64x32-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019ca6561950cc7e0800000000000000
+      internalID: -1744012833669330672
       vertices: []
       indices: 
       edges: []
