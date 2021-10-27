@@ -7,16 +7,19 @@ using UnityEngine.SceneManagement;
 public class LoadRandomScenes : MonoBehaviour
 {
     private int currentLvl;
-    private int randomLvl;
+    [SerializeField]
+    List<int> randomLvl;
+    [SerializeField]
+    private int randomLvlIndex;
 
     public void LoadRandomScene()
     {
-        randomLvl = Random.Range(2,5);
+        currentLvl = randomLvlIndex;
+        randomLvlIndex = Random.Range(0, randomLvl.Count);
         while(randomLvl == currentLvl)
         {
             Debug.Log("Level repetido" + randomLvl);
             randomLvl = Random.Range(2, 5);
-           // LoadRandomScene();
         }
         SceneManager.LoadScene(randomLvl);
         Debug.Log("Scene Loaded = " + randomLvl);

@@ -6,24 +6,25 @@ public class RandomSpawnLocation : MonoBehaviour
 {
     [Header("Potions")]
     [SerializeField]
-    private GameObject atkPotionPrefab;
+    private int potionsAmount;
     [SerializeField]
-    private GameObject lifePotionPrefab;
+    List<GameObject> potionsPrefabs;
     [SerializeField]
-    private Transform[] atkPotionLocation;
-    [SerializeField]
-    private Transform[] lifePotionLocation;
+    List<Transform> potionsLocation;
+
     [Header("Enemies")]
     [SerializeField]
-    private GameObject mummyPrefab;
+    private int enemiesAmount;
     [SerializeField]
-    private GameObject skeletonPrefab;
+    List<GameObject> enemiesPrefabs;
     [SerializeField]
-    private Transform[] mummyLocation;
-    [SerializeField]
-    private Transform[] skeletonLocation;
+    List<Transform> enemiesLocation;
 
-    private int locationIndex;
+    private int randomEnemyIndex;
+    private int enemiesLocationIndex;
+
+    private int randomPotionIndex;
+    private int potionsLocationIndex;
 
     private void Start()
     {
@@ -31,11 +32,19 @@ public class RandomSpawnLocation : MonoBehaviour
     }
     private void Variation1_1()
     {
-        locationIndex = Random.Range(0, mummyLocation.Length);
-        //Instantiate(atkPotionPrefab[], atkPotionLocation);
-        //Instantiate(lifePotionPrefab, lifePotionLocation);
-        Instantiate(mummyPrefab, mummyLocation[locationIndex]);
-        //int i = mummyLocation[locationIndex];
-        Debug.Log(locationIndex);
+        for(int i = 0; i < enemiesAmount; i++)
+        {
+            enemiesLocationIndex = Random.Range(0, enemiesLocation.Count);
+            randomEnemyIndex = Random.Range(0, enemiesPrefabs.Count);
+            Instantiate(enemiesPrefabs[randomEnemyIndex], enemiesLocation[enemiesLocationIndex]);
+            enemiesLocation.RemoveAt(enemiesLocationIndex);
+        }
+        for (int i = 0; i < potionsAmount; i++)
+        {
+            potionsLocationIndex = Random.Range(0, potionsLocation.Count);
+            randomPotionIndex = Random.Range(0, potionsPrefabs.Count);
+            Instantiate(potionsPrefabs[randomPotionIndex], potionsLocation[potionsLocationIndex]);
+            potionsLocation.RemoveAt(potionsLocationIndex);
+        }
     }
 }
