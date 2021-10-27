@@ -8,22 +8,18 @@ public class LoadRandomScenes : MonoBehaviour
 {
     private int currentLvl;
     [SerializeField]
-    List<int> randomLvl;
-    [SerializeField]
+    List<string> randomLvl;
     private int randomLvlIndex;
 
     public void LoadRandomScene()
     {
-        currentLvl = randomLvlIndex;
+        /*
         randomLvlIndex = Random.Range(0, randomLvl.Count);
-        while(randomLvl == currentLvl)
-        {
-            Debug.Log("Level repetido" + randomLvl);
-            randomLvl = Random.Range(2, 5);
-        }
-        SceneManager.LoadScene(randomLvl);
-        Debug.Log("Scene Loaded = " + randomLvl);
-        currentLvl = randomLvl;
+        currentLvl = randomLvlIndex;
+        SceneManager.LoadScene(randomLvl[randomLvlIndex]);
+        Debug.Log("Scene Loaded = " + randomLvlIndex);
+        randomLvl.Clear();
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
