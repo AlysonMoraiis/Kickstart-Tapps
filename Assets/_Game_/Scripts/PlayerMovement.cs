@@ -33,18 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementManager()
     {
-       // MovementKeys(); //Chama as funções do teclado criado pelo Alyson
+       // MovementKeys(); //Chama as funï¿½ï¿½es do teclado criado pelo Alyson
         
         //Retorna true or false se foi clicado em cima da UI, caso seja falso ele chama MovementTouch()
         if (!IsMouseOverUi()) MovementTouch();
-        //Se a posição do player for igual a desejada, ele não executa nada abaixo desse if
+        //Se a posiï¿½ï¿½o do player for igual a desejada, ele nï¿½o executa nada abaixo desse if
         if (transform.position == movePoint.position) 
         {
             anim.SetBool("Walking", false);
             return; 
         
         }
-        //Faz a movimentação para posição desejada
+        //Faz a movimentaï¿½ï¿½o para posiï¿½ï¿½o desejada
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
 
@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementTouch()
     {
-        //Caso não seja o "botão esquerdo do mouse", ele não executa nada abaixo do if
+        //Caso nï¿½o seja o "botï¿½o esquerdo do mouse", ele nï¿½o executa nada abaixo do if
         if (!Input.GetMouseButtonDown(0)) return;        
-        //Pega a posição do clice do mouse e define a posição desejada
+        //Pega a posiï¿½ï¿½o do clice do mouse e define a posiï¿½ï¿½o desejada
         var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0f;
         movePoint.position = worldPosition;
@@ -62,8 +62,6 @@ public class PlayerMovement : MonoBehaviour
         var toPosition = (worldPosition - transform.position).normalized;
         transform.localScale = new Vector3 (toPosition.x < 0 ? -1 : 1, 1, 1);
         Debug.Log($"to position{toPosition}");
-
-
     }
 
     private bool IsMouseOverUi()
@@ -74,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {       
-        //Se a tag do objeto for diferente de Wall, ele não executa nada abaixo
+        //Se a tag do objeto for diferente de Wall, ele nï¿½o executa nada abaixo
         if (!other.gameObject.CompareTag("Wall")) return;
         movePoint.position = transform.position;
         anim.SetBool("Walking", false);
