@@ -7,11 +7,19 @@ public class Unit : MonoBehaviour
     public string unitName;
     public int unitLevel;
 
-    public int damage;
+
+    public int minDmg;
+    public int maxDmg;
 
     public int maxHP;
     public int currentHP;
 
+    public int Attack()
+    {
+        int dmg = Random.Range(minDmg, maxDmg);
+        Debug.Log(dmg);
+        return dmg;
+    }
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;

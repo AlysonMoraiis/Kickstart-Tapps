@@ -68,10 +68,10 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator PlayerAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.Attack());
         onAttack?.Invoke();
         enemyHUD.SetHP(enemyUnit.currentHP);
-            state = BattleState.ENEMYTURN;
+        state = BattleState.ENEMYTURN;
         yield return new WaitForSeconds(2f);
         if(isDead)
         {
@@ -86,7 +86,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        bool isDead = playerUnit.TakeDamage(enemyUnit.Attack());
 
         playerHUD.SetHP(playerUnit.currentHP);
 
