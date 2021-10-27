@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             worldPosition.z = 0f;
             movePoint.position = worldPosition;
-        Debug.Log(worldPosition);
     }
 
     private bool IsMouseOverUi()
@@ -66,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
     {       
         //Se a tag do objeto for diferente de Wall, ele não executa nada abaixo
         if (!other.gameObject.CompareTag("Wall")) return;
-        Debug.Log("Colidiu!"); 
         movePoint.position = transform.position;
 
     }
@@ -74,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         if (!other.gameObject.CompareTag("Wall")) return;
-        Debug.Log("Colidiu!");
         movePoint.position = transform.position;
     }
     
@@ -84,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             battleScene.SetActive(true);
             Destroy(collision.gameObject);
+            movePoint.position = transform.position;
             Debug.Log("Battle");
         }
     }

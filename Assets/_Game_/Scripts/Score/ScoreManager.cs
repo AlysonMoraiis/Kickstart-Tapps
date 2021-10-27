@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         TextUpdate();
-        Debug.Log(PlayerPrefs.GetInt("highscore"));
+        //Debug.Log(PlayerPrefs.GetInt("highscore"));
     }
 
     private void TextUpdate()

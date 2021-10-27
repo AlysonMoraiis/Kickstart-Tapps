@@ -27,6 +27,8 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Others")]
     [SerializeField]
+    private GameObject gameOverPanel;
+    [SerializeField]
     private Text battleResultText;
     [SerializeField]
     private Button quitButton;
@@ -114,6 +116,7 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             battleResultText.text = "You lose";
+            gameOverPanel.SetActive(true);
         }
     }
     public void OnAttackButton()
