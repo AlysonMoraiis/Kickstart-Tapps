@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -18,8 +17,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private Unit playerUnit;
 
-    [SerializeField]
-    private Animator anim;
+    public event Action onAttack;
 
     [Header("Hud")]
     [SerializeField]
@@ -62,9 +60,6 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
-    /// <summary>
-    /// //ultimo
-    /// </summary>
     private void PlayerTurn()
     {
 
@@ -72,6 +67,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        onAttack?.Invoke();
         enemyHUD.SetHP(enemyUnit.currentHP);
             state = BattleState.ENEMYTURN;
         yield return new WaitForSeconds(2f);

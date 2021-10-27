@@ -15,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject battleScene;
 
+    [SerializeField]
+    private Animator anim;
+
+    Vector3 movement;
+
     void Start()
     {
         movePoint.parent = null;
@@ -28,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementManager()
     {
-        MovementKeys(); //Chama as funções do teclado criado pelo Alyson
+       // MovementKeys(); //Chama as funções do teclado criado pelo Alyson
         
         //Retorna true or false se foi clicado em cima da UI, caso seja falso ele chama MovementTouch()
         if (!IsMouseOverUi()) MovementTouch(); 
@@ -48,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             worldPosition.z = 0f;
             movePoint.position = worldPosition;
+        Debug.Log(worldPosition);
     }
 
     private bool IsMouseOverUi()
@@ -70,37 +76,6 @@ public class PlayerMovement : MonoBehaviour
         if (!other.gameObject.CompareTag("Wall")) return;
         Debug.Log("Colidiu!");
         movePoint.position = transform.position;
-    }
-
-    /*void MovementKeys()
-    {
-        var horizontal = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        var vertical = Input.GetAxisRaw("Vertical");
-        velocity = new Vector2(horizontal, vertical);
-    }*/
-
-
-    void MovementKeys()
-    {
-
-        if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
-        {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
-            {
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, colliders))
-                {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-                }
-            }
-
-            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
-            {
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, colliders))
-                {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                }
-            }
-        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
