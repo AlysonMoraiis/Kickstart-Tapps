@@ -7,29 +7,36 @@ using System;
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST };
 public class BattleSystem : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    [SerializeField]
+    private GameObject playerPrefab;
+    [SerializeField]
+    private GameObject enemyPrefab;
+    [SerializeField]
+    private Transform playerBattleStation;
+    [SerializeField]
+    private Transform enemyBattleStation;
+    [SerializeField]
+    private Unit playerUnit;
 
-    public Transform playerBattleStation;
-    public Transform enemyBattleStation;
+    [SerializeField]
+    private Animator anim;
 
-    public Unit playerUnit;
-    Unit enemyUnit;
+    [Header("Hud")]
+    [SerializeField]
+    private BattleHud enemyHUD;
+    [SerializeField]
+    private BattleHud playerHUD;
 
-    public BattleHud playerHUD;
-    public BattleHud enemyHUD;
-
-    public Text battleResultText;
-
-    public Button quitButton;
+    [Header("Others")]
+    [SerializeField]
+    private Text battleResultText;
+    [SerializeField]
+    private Button quitButton;
 
     public event Action<int> OnWinning;
 
-
-    public BattleState state;
-    void Start()
-    {
-    }
+    private Unit enemyUnit;
+    private BattleState state;
 
     private void OnEnable()
     {
@@ -97,8 +104,6 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.PLAYERTURN;
             PlayerTurn();
         }
-
-         
     }
 
     void EndBattle()

@@ -133,10 +133,10 @@ TextureImporter:
       name: Player_Idle_64x32 teste-Sheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1
-        width: 17
-        height: 30
+        x: 0
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: Player_Idle_64x32 teste-Sheet_1
       rect:
         serializedVersion: 2
-        x: 71
-        y: 1
-        width: 17
-        height: 31
+        x: 64
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Player_Idle_64x32 teste-Sheet_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 1
-        width: 17
-        height: 31
+        x: 128
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: Player_Idle_64x32 teste-Sheet_3
       rect:
         serializedVersion: 2
-        x: 199
-        y: 1
-        width: 17
-        height: 30
+        x: 192
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: Player_Idle_64x32 teste-Sheet_4
       rect:
         serializedVersion: 2
-        x: 263
-        y: 1
-        width: 17
-        height: 30
+        x: 256
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
