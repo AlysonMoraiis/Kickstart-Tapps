@@ -38,12 +38,6 @@ public class Menu : MonoBehaviour
         panelSettings.SetActive(false);
     }
 
-
-    public void BackMenuGame()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
     public void Quit()
     {
         Debug.Log("SAIU");
