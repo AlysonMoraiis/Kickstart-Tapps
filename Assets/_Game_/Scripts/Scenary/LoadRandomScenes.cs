@@ -8,6 +8,7 @@ public class LoadRandomScenes : MonoBehaviour
 {
     private int currentLvl;
     private int randomLvl;
+
     public void LoadRandomScene()
     {
         randomLvl = Random.Range(2,5);
