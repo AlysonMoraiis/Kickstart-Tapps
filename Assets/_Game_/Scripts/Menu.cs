@@ -38,6 +38,7 @@ public class Menu : MonoBehaviour
         panelSettings.SetActive(false);
     }
 
+
     public void Quit()
     {
         Debug.Log("SAIU");
