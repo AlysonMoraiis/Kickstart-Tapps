@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    [SerializeField]
-    private BattleSystem battleSystem;
+    public BattleSystem battleSystem;
 
     [SerializeField]
     private Animator anim;
@@ -19,10 +18,10 @@ public class PlayerAnimations : MonoBehaviour
         battleSystem.onAttack -= AttackAnim;
     }
 
-    private void AttackAnim()
+    public void AttackAnim()
     {
         Debug.Log("Atacouuu");
-        anim.SetBool("attackBool", true);
+        anim.SetTrigger("Attack");
     }
 }
-//////////////não tá funcionando, apagar esse script
+//////////////nï¿½o tï¿½ funcionando, apagar esse script

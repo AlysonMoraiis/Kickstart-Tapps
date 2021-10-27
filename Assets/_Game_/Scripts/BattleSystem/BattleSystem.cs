@@ -16,6 +16,8 @@ public class BattleSystem : MonoBehaviour
     private Transform enemyBattleStation;
     [SerializeField]
     private Unit playerUnit;
+    public PlayerAnimations playerAnimations;
+
 
     public event Action onAttack;
 
@@ -49,6 +51,8 @@ public class BattleSystem : MonoBehaviour
         quitButton.gameObject.SetActive(false);
         battleResultText.text = "";
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerAnimations = playerGO.GetComponent<PlayerAnimations>();
+        playerAnimations.battleSystem = this;
         //playerUnit = playerGO.GetComponent<Unit>();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
@@ -70,6 +74,7 @@ public class BattleSystem : MonoBehaviour
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         onAttack?.Invoke();
+        playerAnimations.AttackAnim();
         enemyHUD.SetHP(enemyUnit.currentHP);
             state = BattleState.ENEMYTURN;
         yield return new WaitForSeconds(2f);
