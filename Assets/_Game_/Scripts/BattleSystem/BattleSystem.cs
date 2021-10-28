@@ -77,7 +77,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimations.AttackAnim();
         enemyHUD.SetHP(enemyUnit.currentHP);
         state = BattleState.ENEMYTURN;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         if(isDead)
         {
             state = BattleState.WON;
@@ -92,9 +92,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         bool isDead = playerUnit.TakeDamage(enemyUnit.Attack());
-
         playerHUD.SetHP(playerUnit.currentHP);
-
         yield return new WaitForSeconds(1f);
 
         if(isDead)
@@ -111,7 +109,6 @@ public class BattleSystem : MonoBehaviour
 
     void EndBattle()
     {
-        Debug.Log("Acabou");
         quitButton.gameObject.SetActive(true);
         if (state == BattleState.WON)
         {
