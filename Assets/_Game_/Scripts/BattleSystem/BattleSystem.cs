@@ -18,6 +18,7 @@ public class BattleSystem : MonoBehaviour
     private Unit playerUnit;
 
     public PlayerAnimations playerAnimations;
+    public EnemyAnimations enemyAnimations;
 
 
     public event Action onAttack;
@@ -58,6 +59,8 @@ public class BattleSystem : MonoBehaviour
 
         GameObject enemyGO = Instantiate(skeletonPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+        enemyAnimations = enemyGO.GetComponent<EnemyAnimations>();
+        enemyAnimations.battleSystem = this;
 
         playerHUD.HUD(playerUnit);
         enemyHUD.HUD(enemyUnit);
@@ -76,6 +79,8 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.Attack());
         onAttack?.Invoke();
         playerAnimations.AttackAnim();
+        enemyAnimations.TakeDamageAnim();
+
         //GameObject dmgPopUpGO = Instantiate(dmgPopUpText, dmgPopupLocation);
         enemyHUD.SetHP(enemyUnit.CurrentHP);
         state = BattleState.ENEMYTURN;
@@ -94,6 +99,7 @@ public class BattleSystem : MonoBehaviour
     {
         bool isDead = playerUnit.TakeDamage(enemyUnit.Attack());
         playerAnimations.TakeDamageAnim();
+        enemyAnimations.AttackAnim();
         playerHUD.SetHP(playerUnit.CurrentHP);
         yield return new WaitForSeconds(1f);
 
