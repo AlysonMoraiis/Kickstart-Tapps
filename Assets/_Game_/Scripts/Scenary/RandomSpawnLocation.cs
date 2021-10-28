@@ -59,7 +59,8 @@ public class RandomSpawnLocation : MonoBehaviour
         for (int i = 0; i < dungeonPassAmount; i++)
         {
             dungeonPassLocationIndex = Random.Range(0, dungeonPassLocation.Count);
-            Instantiate(dungeonPassPrefab, dungeonPassLocation[dungeonPassLocationIndex]);
+            
+            //Instantiate(dungeonPassPrefab, dungeonPassLocation[dungeonPassLocationIndex]);
             //potionsLocation.RemoveAt(dungeonPassLocationIndex);
         }
     }

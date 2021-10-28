@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
- 
+using System;
 
 public class LoadRandomScenes : MonoBehaviour
 {
     [SerializeField]
     List<string> randomLvl;
+
+    public event Action onDungeonPass;
+
     private int randomLvlIndex;
 
     public void LoadRandomScene()
     {
-        randomLvlIndex = Random.Range(0, randomLvl.Count);
+        randomLvlIndex = UnityEngine.Random.Range(0, randomLvl.Count);
         SceneManager.LoadScene(randomLvl[randomLvlIndex]);
         randomLvl.RemoveAt(randomLvlIndex);
     }
@@ -21,6 +25,8 @@ public class LoadRandomScenes : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            onDungeonPass?.Invoke();
+            Destroy(this.gameObject);
             LoadRandomScene();
         }
     }

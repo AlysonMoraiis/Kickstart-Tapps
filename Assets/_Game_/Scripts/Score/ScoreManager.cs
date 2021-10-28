@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private Text highscoreText;
     [SerializeField]
+    private Text dungeonsAmountText;
+    [SerializeField]
     private ScoreData scoreData;
     [SerializeField]
     private BattleSystem battle;
@@ -27,9 +29,17 @@ public class ScoreManager : MonoBehaviour
         TextUpdate();
     }
 
+    private void DungeonPass()
+    {
+        Debug.Log("Dale");
+        scoreData.dungeonsAmount += 1;
+        AddPoints(2);
+    }
+
     private void TextUpdate()
     {
         scoreText.text = "SCORE: " + scoreData.score.ToString();
+        dungeonsAmountText.text = "DUNGEONS: " + scoreData.dungeonsAmount.ToString();
     }
 
     private void AddPoints(int points)
