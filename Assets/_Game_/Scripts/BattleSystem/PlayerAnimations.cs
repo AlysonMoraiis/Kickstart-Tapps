@@ -23,5 +23,10 @@ public class PlayerAnimations : MonoBehaviour
         Debug.Log("Atacouuu");
         anim.SetTrigger("Attack");
     }
+
+    public void TakeDamageAnim()
+    {
+        anim.SetTrigger("Damage");
+    }
 }
 //////////////n�o t� funcionando, apagar esse script

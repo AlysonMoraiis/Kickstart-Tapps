@@ -93,6 +93,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         bool isDead = playerUnit.TakeDamage(enemyUnit.Attack());
+        playerAnimations.TakeDamageAnim();
         playerHUD.SetHP(playerUnit.CurrentHP);
         yield return new WaitForSeconds(1f);
 
