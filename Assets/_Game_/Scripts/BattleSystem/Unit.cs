@@ -10,8 +10,6 @@ public class Unit : MonoBehaviour
     private int defaultMinDmg;
     [SerializeField]
     private int defaultMaxDmg;
-    [SerializeField]
-    private int defaultMaxHP;
 
     [Header("Status")]
     [SerializeField]
@@ -44,6 +42,13 @@ public class Unit : MonoBehaviour
     {
         get { return minDmg; }
         set { minDmg = value; }
+    }
+
+    public void DefaultStats()
+    {
+        minDmg = defaultMinDmg;
+        maxDmg = defaultMaxDmg;
+        currentHP = maxHP;
     }
 
     public int Attack()

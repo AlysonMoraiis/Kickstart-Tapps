@@ -120,6 +120,7 @@ public class BattleSystem : MonoBehaviour
         {
             battleResultText.text = "You lose";
             gameOverPanel.SetActive(true);
+            playerUnit.DefaultStats();
         }
     }
     public void OnAttackButton()

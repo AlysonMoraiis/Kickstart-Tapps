@@ -9,10 +9,11 @@ public class LoadRandomScenes : MonoBehaviour
 {
     [SerializeField]
     List<string> randomLvl;
-
-    public event Action onDungeonPass;
+    [SerializeField]
+    private ScoreManager scoreManager;
 
     private int randomLvlIndex;
+
 
     public void LoadRandomScene()
     {
@@ -25,7 +26,7 @@ public class LoadRandomScenes : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            onDungeonPass?.Invoke();
+           // scoreManager.DungeonPass();
             Destroy(this.gameObject);
             LoadRandomScene();
         }

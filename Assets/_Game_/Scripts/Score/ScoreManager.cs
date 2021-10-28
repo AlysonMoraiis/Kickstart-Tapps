@@ -29,9 +29,8 @@ public class ScoreManager : MonoBehaviour
         TextUpdate();
     }
 
-    private void DungeonPass()
+    public void DungeonPass()
     {
-        Debug.Log("Dale");
         scoreData.dungeonsAmount += 1;
         AddPoints(2);
     }

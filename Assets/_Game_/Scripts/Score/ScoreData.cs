@@ -6,10 +6,11 @@ public class ScoreData : ScriptableObject
     public int score;
     public int highscore;
 
-    public int dungeonsAmount;
+
+    public int dungeonsAmount = 1;
     public void ResetScore()
     {
         score = 0;
-        dungeonsAmount = 0;
+        dungeonsAmount = 1;
     }
 }

@@ -12,7 +12,7 @@ public class Collectables : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && collectableName == "atkUP")
         {
             playerUnit.MinDmg += 5;
-            playerUnit.MinDmg += 5;
+            playerUnit.MaxDmg += 5;
             Debug.Log("dmg + 5");
             Destroy(gameObject);
         }
