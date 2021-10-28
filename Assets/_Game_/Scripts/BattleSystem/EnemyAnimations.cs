@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimations : MonoBehaviour
+public class EnemyAnimations : MonoBehaviour
 {
     public BattleSystem battleSystem;
 
     [SerializeField]
     private Animator anim;
 
-    private void OnEnable()
+
+    private void Start() 
     {
-        battleSystem.onAttack += AttackAnim;
-    }
-    private void OnDisable()
-    {
-        battleSystem.onAttack -= AttackAnim;
+        anim = GetComponent<Animator>();
     }
 
     public void AttackAnim()
