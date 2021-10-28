@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +7,8 @@ public class BattleHud : MonoBehaviour
 
     public void HUD(Unit unit)
     {
-        hpSlider.maxValue = unit.maxHP;
-        hpSlider.value = unit.currentHP;
+        hpSlider.maxValue = unit.MaxHP;
+        hpSlider.value = unit.CurrentHP;
     }
 
     public void SetHP(int hp)

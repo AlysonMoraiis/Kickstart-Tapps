@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,11 +19,21 @@ public class RandomSpawnLocation : MonoBehaviour
     [SerializeField]
     List<Transform> enemiesLocation;
 
+    [Header("DungeonPass")]
+    [SerializeField]
+    private int dungeonPassAmount;
+    [SerializeField]
+    private GameObject dungeonPassPrefab;
+    [SerializeField]
+    List<Transform> dungeonPassLocation;
+
     private int randomEnemyIndex;
     private int enemiesLocationIndex;
 
     private int randomPotionIndex;
     private int potionsLocationIndex;
+
+    private int dungeonPassLocationIndex;
 
     private void Start()
     {
@@ -45,6 +54,13 @@ public class RandomSpawnLocation : MonoBehaviour
             randomPotionIndex = Random.Range(0, potionsPrefabs.Count);
             Instantiate(potionsPrefabs[randomPotionIndex], potionsLocation[potionsLocationIndex]);
             potionsLocation.RemoveAt(potionsLocationIndex);
+        }
+
+        for (int i = 0; i < dungeonPassAmount; i++)
+        {
+            dungeonPassLocationIndex = Random.Range(0, dungeonPassLocation.Count);
+            Instantiate(dungeonPassPrefab, dungeonPassLocation[dungeonPassLocationIndex]);
+            //potionsLocation.RemoveAt(dungeonPassLocationIndex);
         }
     }
 }

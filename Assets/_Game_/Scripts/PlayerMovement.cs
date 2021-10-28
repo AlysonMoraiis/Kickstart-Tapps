@@ -5,27 +5,24 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Alterables")]
     [SerializeField]
     private float moveSpeed = 5f;
+
+    [Header("Others")]
     [SerializeField]
     private Transform movePoint;
     [SerializeField]
     private LayerMask colliders;
-
     [SerializeField]
     private GameObject battleScene;
-
     [SerializeField]
     private Animator anim;
-
-    Vector3 movement;
 
     void Start()
     {
         movePoint.parent = null;
     }
-
-
     void Update()
     {
         MovementManager();

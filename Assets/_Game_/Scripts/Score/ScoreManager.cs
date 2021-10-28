@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     private Text highscoreText;
     [SerializeField]
     private ScoreData scoreData;
-
     [SerializeField]
     private BattleSystem battle;
 
@@ -26,7 +25,6 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         TextUpdate();
-        //Debug.Log(PlayerPrefs.GetInt("highscore"));
     }
 
     private void TextUpdate()

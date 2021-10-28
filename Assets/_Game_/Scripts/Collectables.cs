@@ -11,21 +11,21 @@ public class Collectables : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collectableName == "atkUP")
         {
-            playerUnit.minDmg += 5;
-            playerUnit.maxDmg += 5;
+            playerUnit.MinDmg += 5;
+            playerUnit.MinDmg += 5;
             Debug.Log("dmg + 5");
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Player") && collectableName == "life")
         {
-            playerUnit.currentHP += 10;
+            playerUnit.CurrentHP += 10;
             Debug.Log("life + 10");
 
             Destroy(gameObject);
 
-            if(playerUnit.currentHP > playerUnit.maxHP)
+            if(playerUnit.CurrentHP > playerUnit.MaxHP)
             {
-                playerUnit.currentHP = playerUnit.maxHP;
+                playerUnit.CurrentHP = playerUnit.MaxHP;
             }
         }
     }

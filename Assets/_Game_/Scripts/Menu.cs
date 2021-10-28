@@ -11,7 +11,6 @@ public class Menu : MonoBehaviour
     public GameObject panelCredits;
     public GameObject panelSettings;
 
-
     public void Play()
     {
         SceneManager.LoadScene("Gameplay");

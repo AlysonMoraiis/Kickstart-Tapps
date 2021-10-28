@@ -16,6 +16,7 @@ public class BattleSystem : MonoBehaviour
     private Transform enemyBattleStation;
     [SerializeField]
     private Unit playerUnit;
+
     public PlayerAnimations playerAnimations;
 
 
@@ -34,10 +35,6 @@ public class BattleSystem : MonoBehaviour
     private Text battleResultText;
     [SerializeField]
     private Button quitButton;
-
-    public GameObject dmgPopUpText;
-    public Transform dmgPopupLocation;
-    public Text testText;
 
     public event Action<int> OnWinning;
 
@@ -79,9 +76,8 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.Attack());
         onAttack?.Invoke();
         playerAnimations.AttackAnim();
-        GameObject dmgPopUpGO = Instantiate(dmgPopUpText, dmgPopupLocation);
-        testText.text = playerUnit.dmgTest.ToString();
-        enemyHUD.SetHP(enemyUnit.currentHP);
+        //GameObject dmgPopUpGO = Instantiate(dmgPopUpText, dmgPopupLocation);
+        enemyHUD.SetHP(enemyUnit.CurrentHP);
         state = BattleState.ENEMYTURN;
         yield return new WaitForSeconds(1f);
         if(isDead)
@@ -94,11 +90,10 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(EnemyTurn());
         }
     }
-
     IEnumerator EnemyTurn()
     {
         bool isDead = playerUnit.TakeDamage(enemyUnit.Attack());
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD.SetHP(playerUnit.CurrentHP);
         yield return new WaitForSeconds(1f);
 
         if(isDead)
@@ -112,7 +107,6 @@ public class BattleSystem : MonoBehaviour
             PlayerTurn();
         }
     }
-
     void EndBattle()
     {
         quitButton.gameObject.SetActive(true);
@@ -135,5 +129,4 @@ public class BattleSystem : MonoBehaviour
         }
         StartCoroutine(PlayerAttack());
     }
-
 }
