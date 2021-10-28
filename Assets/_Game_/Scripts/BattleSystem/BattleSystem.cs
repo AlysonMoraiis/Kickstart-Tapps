@@ -9,7 +9,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private GameObject playerPrefab;
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject skeletonPrefab;
     [SerializeField]
     private Transform playerBattleStation;
     [SerializeField]
@@ -35,6 +35,10 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private Button quitButton;
 
+    public GameObject dmgPopUpText;
+    public Transform dmgPopupLocation;
+    public Text testText;
+
     public event Action<int> OnWinning;
 
     private Unit enemyUnit;
@@ -55,7 +59,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimations.battleSystem = this;
         //playerUnit = playerGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        GameObject enemyGO = Instantiate(skeletonPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         playerHUD.HUD(playerUnit);
@@ -75,6 +79,8 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.Attack());
         onAttack?.Invoke();
         playerAnimations.AttackAnim();
+        GameObject dmgPopUpGO = Instantiate(dmgPopUpText, dmgPopupLocation);
+        testText.text = playerUnit.dmgTest.ToString();
         enemyHUD.SetHP(enemyUnit.currentHP);
         state = BattleState.ENEMYTURN;
         yield return new WaitForSeconds(1f);

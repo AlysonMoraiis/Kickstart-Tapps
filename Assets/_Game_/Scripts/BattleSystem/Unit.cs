@@ -15,9 +15,10 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
-    public Text floatingText;
-    public Transform dmgPopupLocation;
+    public int dmgTest;
 
+    [SerializeField]
+    private Text dmgPopUpText;
     public int Attack()
     {
         int dmg = Random.Range(minDmg, maxDmg);
@@ -27,9 +28,8 @@ public class Unit : MonoBehaviour
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
-        floatingText.text = dmg.ToString();
-        Instantiate (floatingText, dmgPopupLocation);
-
+        //dmgPopUpText.text = dmg.ToString();
+        dmgTest = dmg;
         if(currentHP <= 0)
         {
             return true;

@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Walking", true);
         var toPosition = (worldPosition - transform.position).normalized;
         transform.localScale = new Vector3 (toPosition.x < 0 ? -1 : 1, 1, 1);
-        Debug.Log($"to position{toPosition}");
     }
 
     private bool IsMouseOverUi()
