@@ -38,7 +38,6 @@ public class ScoreManager : MonoBehaviour
     private void TextUpdate()
     {
         scoreText.text = "SCORE: " + scoreData.score.ToString();
-        dungeonsAmountText.text = "DUNGEONS: " + scoreData.dungeonsAmount.ToString();
     }
 
     private void AddPoints(int points)
