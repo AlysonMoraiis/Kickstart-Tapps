@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST };
 public class BattleSystem : MonoBehaviour
@@ -19,6 +20,8 @@ public class BattleSystem : MonoBehaviour
     private Transform enemyBattleStation;
     [SerializeField]
     private Unit playerUnit;
+
+    private GameObject playerGO;
 
     public PlayerAnimations playerAnimations;
     public EnemyAnimations enemyAnimations;
@@ -45,6 +48,8 @@ public class BattleSystem : MonoBehaviour
     private Unit enemyUnit;
     private BattleState state;
 
+    private bool canBattle = true;
+
     private void OnEnable()
     {
         state = BattleState.START;
@@ -55,12 +60,13 @@ public class BattleSystem : MonoBehaviour
     {
         quitButton.gameObject.SetActive(false);
         battleResultText.text = "";
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerAnimations = playerGO.GetComponent<PlayerAnimations>();
-        playerAnimations.battleSystem = this;
+        if (canBattle)
+        {
+            playerGO = Instantiate(playerPrefab, playerBattleStation);
+            playerAnimations = playerGO.GetComponent<PlayerAnimations>();
+            playerAnimations.battleSystem = this;
+        }
         //playerUnit = playerGO.GetComponent<Unit>();
-        Debug.Log("passou");
-
         switch (enemyName) 
         {
             case "Skeleton":
@@ -74,15 +80,18 @@ public class BattleSystem : MonoBehaviour
                 break;
             }
         }
-
-        GameObject enemyGO = Instantiate(trueEnemy, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
-        enemyAnimations = enemyGO.GetComponent<EnemyAnimations>();
-        enemyAnimations.battleSystem = this;
+        if (canBattle)
+        {
+            GameObject enemyGO = Instantiate(trueEnemy, enemyBattleStation);
+            enemyUnit = enemyGO.GetComponent<Unit>();
+            enemyAnimations = enemyGO.GetComponent<EnemyAnimations>();
+            enemyAnimations.battleSystem = this;
+        }
 
         playerHUD.HUD(playerUnit);
         enemyHUD.HUD(enemyUnit);
 
+        canBattle = false;
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERTURN;
@@ -134,6 +143,7 @@ public class BattleSystem : MonoBehaviour
     }
     void EndBattle()
     {
+        canBattle = true;
         quitButton.gameObject.SetActive(true);
         if (state == BattleState.WON)
         {
@@ -147,6 +157,7 @@ public class BattleSystem : MonoBehaviour
             gameOverPanel.SetActive(true);
             playerUnit.DefaultStats();
         }
+        Destroy(playerGO);
     }
     public void OnAttackButton()
     {

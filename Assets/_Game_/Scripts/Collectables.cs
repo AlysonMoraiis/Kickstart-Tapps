@@ -20,7 +20,6 @@ public class Collectables : MonoBehaviour
         {
             playerUnit.CurrentHP += 10;
             Debug.Log("life + 10");
-
             Destroy(gameObject);
 
             if(playerUnit.CurrentHP > playerUnit.MaxHP)

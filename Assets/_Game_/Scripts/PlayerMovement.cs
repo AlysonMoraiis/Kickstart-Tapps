@@ -93,16 +93,20 @@ public class PlayerMovement : MonoBehaviour
         if (canCollide)
         {
             canCollide = false;
-            battleScene.SetActive(true);
-            Destroy(collision.gameObject);
-            movePoint.position = transform.position;
-            Debug.Log("Battle");
             if (collision.gameObject.CompareTag("Skeleton"))
             {
+                battleScene.SetActive(true);
+                Destroy(collision.gameObject);
+                movePoint.position = transform.position;
+                Debug.Log("Battle");
                 StartCoroutine(battleSystem.SetupBattle("Skeleton"));
             }
             if (collision.gameObject.CompareTag("Mummy"))
             {
+                battleScene.SetActive(true);
+                Destroy(collision.gameObject);
+                movePoint.position = transform.position;
+                Debug.Log("Battle");
                 StartCoroutine(battleSystem.SetupBattle("Mummy"));
             }
         }
