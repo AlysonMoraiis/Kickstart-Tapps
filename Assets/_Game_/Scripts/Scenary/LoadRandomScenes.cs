@@ -26,7 +26,7 @@ public class LoadRandomScenes : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-           // scoreManager.DungeonPass();
+            //scoreManager.AddPoints(2);
             Destroy(this.gameObject);
             LoadRandomScene();
         }

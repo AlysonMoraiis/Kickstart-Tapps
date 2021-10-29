@@ -11,15 +11,15 @@ public class Collectables : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collectableName == "atkUP")
         {
-            playerUnit.MinDmg += 5;
-            playerUnit.MaxDmg += 5;
-            Debug.Log("dmg + 5");
+            playerUnit.MinDmg += 3;
+            playerUnit.MaxDmg += 3;
+            Debug.Log("dmg + 3");
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Player") && collectableName == "life")
         {
-            playerUnit.CurrentHP += 10;
-            Debug.Log("life + 10");
+            playerUnit.CurrentHP += 15;
+            Debug.Log("life + 15");
             Destroy(gameObject);
 
             if(playerUnit.CurrentHP > playerUnit.MaxHP)
