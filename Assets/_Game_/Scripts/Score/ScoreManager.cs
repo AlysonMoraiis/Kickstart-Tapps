@@ -29,9 +29,13 @@ public class ScoreManager : MonoBehaviour
         TextUpdate();
     }
 
+    public void ResetScore()
+    {
+        scoreData.score = 0;
+    }
+
     public void DungeonPass()
     {
-        scoreData.dungeonsAmount += 1;
         AddPoints(2);
     }
 
