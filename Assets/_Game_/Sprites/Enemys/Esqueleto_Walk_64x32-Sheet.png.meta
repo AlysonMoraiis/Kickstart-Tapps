@@ -41,6 +41,18 @@ TextureImporter:
   - first:
       213: 3609597192176924909
     second: Esqueleto_Walk_64x32-Sheet_12
+  - first:
+      213: -8614851136997292632
+    second: Esqueleto_Walk_64x32-Sheet_13
+  - first:
+      213: 1299894050793095604
+    second: Esqueleto_Walk_64x32-Sheet_14
+  - first:
+      213: -8333248543702584454
+    second: Esqueleto_Walk_64x32-Sheet_15
+  - first:
+      213: -7846654584349886162
+    second: Esqueleto_Walk_64x32-Sheet_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,10 +169,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 32
+        x: 39
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +190,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 32
+        x: 103
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +211,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 32
+        x: 167
+        y: 8
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +232,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 32
+        x: 231
+        y: 8
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +253,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 32
+        x: 295
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +274,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 32
+        x: 359
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +295,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 32
+        x: 423
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +316,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 32
+        x: 487
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,10 +337,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 32
+        x: 551
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +358,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 32
+        x: 615
+        y: 8
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +379,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 32
+        x: 679
+        y: 8
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +400,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 32
+        x: 743
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +421,10 @@ TextureImporter:
       name: Esqueleto_Walk_64x32-Sheet_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 32
+        x: 807
+        y: 1
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,6 +434,90 @@ TextureImporter:
       bones: []
       spriteID: de8f3f5958dd71230800000000000000
       internalID: 3609597192176924909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esqueleto_Walk_64x32-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5086ac886e17880800000000000000
+      internalID: -8614851136997292632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esqueleto_Walk_64x32-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b18a2780c62a0210800000000000000
+      internalID: 1299894050793095604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esqueleto_Walk_64x32-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73f097d99a5a5c80800000000000000
+      internalID: -8333248543702584454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esqueleto_Walk_64x32-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2972a89a351b1390800000000000000
+      internalID: -7846654584349886162
       vertices: []
       indices: 
       edges: []
