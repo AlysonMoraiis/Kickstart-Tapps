@@ -63,6 +63,7 @@ public class Unit : MonoBehaviour
         currentHP -= dmg;
         if(currentHP <= 0)
         {
+            Destroy(gameObject, 0.5f);
             return true;
         }
         else

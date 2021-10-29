@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     private GameObject battleScene;
     [SerializeField]
     private Animator anim;
+    private bool canCollide = true;
+
+    [SerializeField]
+    private BattleSystem battleSystem;
 
     void Start()
     {
@@ -86,15 +90,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (canCollide)
         {
+            canCollide = false;
             battleScene.SetActive(true);
             Destroy(collision.gameObject);
             movePoint.position = transform.position;
             Debug.Log("Battle");
+            if (collision.gameObject.CompareTag("Skeleton"))
+            {
+                StartCoroutine(battleSystem.SetupBattle("Skeleton"));
+            }
+            if (collision.gameObject.CompareTag("Mummy"))
+            {
+                StartCoroutine(battleSystem.SetupBattle("Mummy"));
+            }
         }
     }
-    
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Skeleton") || collision.gameObject.CompareTag("Mummy"))
+        {
+            canCollide = true;
+        }   
+    }
 }
 

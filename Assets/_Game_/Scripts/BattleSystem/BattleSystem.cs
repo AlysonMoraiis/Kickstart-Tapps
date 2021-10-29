@@ -11,6 +11,9 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private GameObject skeletonPrefab;
     [SerializeField]
+    private GameObject mummyPrefab;
+    private GameObject trueEnemy;
+    [SerializeField]
     private Transform playerBattleStation;
     [SerializeField]
     private Transform enemyBattleStation;
@@ -45,10 +48,10 @@ public class BattleSystem : MonoBehaviour
     private void OnEnable()
     {
         state = BattleState.START;
-        StartCoroutine(SetupBattle());
+        //StartCoroutine(SetupBattle());
     }
 
-    IEnumerator SetupBattle()
+    public IEnumerator SetupBattle(string enemyName)
     {
         quitButton.gameObject.SetActive(false);
         battleResultText.text = "";
@@ -56,8 +59,23 @@ public class BattleSystem : MonoBehaviour
         playerAnimations = playerGO.GetComponent<PlayerAnimations>();
         playerAnimations.battleSystem = this;
         //playerUnit = playerGO.GetComponent<Unit>();
+        Debug.Log("passou");
 
-        GameObject enemyGO = Instantiate(skeletonPrefab, enemyBattleStation);
+        switch (enemyName) 
+        {
+            case "Skeleton":
+            {
+                trueEnemy = skeletonPrefab;
+                break;
+            }
+            case "Mummy":
+            {
+                trueEnemy = mummyPrefab;
+                break;
+            }
+        }
+
+        GameObject enemyGO = Instantiate(trueEnemy, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
         enemyAnimations = enemyGO.GetComponent<EnemyAnimations>();
         enemyAnimations.battleSystem = this;
@@ -120,6 +138,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             battleResultText.text = "You win";
+
             OnWinning?.Invoke(5);
         }
         else if (state == BattleState.LOST)
